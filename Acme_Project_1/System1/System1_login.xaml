@@ -1,0 +1,245 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="System1_login"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ss="clr-namespace:System.Security;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_System1_URL" Type="InArgument(x:String)" />
+    <x:Property Name="in_System1Credentials" Type="InArgument(x:String)" />
+    <x:Property Name="in_System1_uname" Type="InArgument(x:String)" />
+    <x:Property Name="in_System1_pwd" Type="InArgument(ss:SecureString)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>System1_login_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Opn systm1 url" DisplayName="System1_login" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="LoginSuccess" />
+    </Sequence.Variables>
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" Url="[in_System1_URL]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <Sequence DisplayName="Web" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Web" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="LoginError" />
+                </Sequence.Variables>
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'ACMESyste Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="579250420d9d37bfb8ea0732adc34836" Selector="&lt;html app='firefox.exe' title='ACME System 1 - Account - Log In' /&gt;">
+                  <ui:BrowserScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  email'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_System1_uname]">
+                          <ui:TypeInto.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6c9276300e5c9cd0dbcb47cb15ec2f99" Selector="&lt;webctrl id='email' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:TypeInto.Target>
+                        </ui:TypeInto>
+                        <ui:TypeSecureText DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Secure Text 'INPUT  password'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[in_System1_pwd]" SendWindowMessages="False" SimulateType="False">
+                          <ui:TypeSecureText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4b4a8c2a911c0afc7428a78d5b22272e" Selector="&lt;webctrl id='password' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                          </ui:TypeSecureText.Target>
+                        </ui:TypeSecureText>
+                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  buttonLogin'" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="26" OffsetY="16" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7d4c21016145282d18ee9d4133eb6aa3" Selector="&lt;webctrl id='buttonLogin' tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:ImageFound Found="{x:Null}" DisplayName="Image Exists 'firefox.exe ACME'" sap2010:WorkflowViewState.IdRef="ImageFound_2">
+                          <ui:ImageFound.Image>
+                            <ui:ImageTarget Image="{x:Null}" Accuracy="0.6" TargetImageBase64="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" />
+                          </ui:ImageFound.Image>
+                          <ui:ImageFound.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl css-selector='body&amp;gt;div' tag='DIV' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                          </ui:ImageFound.Target>
+                        </ui:ImageFound>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:BrowserScope.Body>
+                </ui:BrowserScope>
+                <If Condition="[LoginError]" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'firefox.exe ACME'" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+                        <ui:ClickImage.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:ClickImage.CursorPosition>
+                        <ui:ClickImage.Image>
+                          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAAeCAYAAACG0fjXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEdSURBVGhD7dYtEoMwEIbhnIcZhtNgEJyjEofiFlgch0BVYCrQHABMRcWW8JOGv4E1LJ35xCsCUc+EDaptW0LnAxgzgDEDGLMeTD1e6EQzsGf9prr5oJ1WYFub0C+AMQMYM4AxuwVYEXuklDL5mfW+TMhRIaXW/rqpKHK7vUFuPbsmcbAey02oMM9y8js0J66G9QpswJqhXpgwmMZZnp4uG2kGJoulkwXLwsXpmrJgDJg8lk4ebGcOpYEN5pGjZ5aecQJzy+6mYMsTNs20xXwTSBaMPcOmtUdROa4vThhs+qWw0Y5uya2b9brEwfr0p6nn09hssG+Amf8wAbR7gP1RAGMGMGYAYwYwZgBjBjBmKzB0nAFD5wMYM4CxaukL3Q9g7mksZiYAAAAASUVORK5CYII=" />
+                        </ui:ClickImage.Image>
+                        <ui:ClickImage.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl css-selector='body&amp;gt;div' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:ClickImage.Target>
+                      </ui:ClickImage>
+                      <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="Login Failed.." />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <ui:ImageFound DisplayName="Image Exists 'firefox.exe ACME'" Found="[LoginSuccess]" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                        <ui:ImageFound.Image>
+                          <ui:ImageTarget Image="{x:Null}" Accuracy="0.6" TargetImageBase64="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" />
+                        </ui:ImageFound.Image>
+                        <ui:ImageFound.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html app='firefox.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl idx='1' tag='H1' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                        </ui:ImageFound.Target>
+                      </ui:ImageFound>
+                      <If Condition="[LoginSuccess]" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Then>
+                          <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="Login was successful.." />
+                        </If.Then>
+                        <If.Else>
+                          <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="Login Failed.." />
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <sads:DebugSymbol.Symbol>d0pDOlxVc2Vyc1xTcmlyYW1cRG9jdW1lbnRzXFVpUGF0aFxBY21lX1Byb2plY3RfMVxTeXN0ZW0xXFN5c3RlbTFfbG9naW4ueGFtbCxFA68BDgIBAUkFrQEWAgECScABSdIBAgExTwuqARYCAQNQDVCFAQIBMFENqQEYAgEEUg+oARoCAQVWEXojAgEdexGnARYCAQZWrQJW+AICAS9cF3ciAgEeex97LQIBB30VkQEgAgEXlAEVpQEgAgEJXRlhJwIBK2IZZi0CASdnGW4kAgEjbxl2KQIBH34XjwEnAgEakAEXkAGYAQIBGJUBF5wBJwIBEZ0BF6QBHAIBCl+sAV/WAQIBLl2wAl3EAgIBLGSsAWTZAQIBKmKdAmKvAgIBKGysAWzdAQIBJmlFaUkCASVpOGk8AgEkdF50mgECASJ0pQF0qwECASFxR3FMAgEgjQFxjQGtAQIBHIoBRYoBSgIBG5ABhQGQAZUBAgEZmgFcmgHCAQIBFpoBzQGaAdMBAgEVlQFalQFqAgETlwFFlwFKAgESnQElnQE1AgELnwEbnwGjAQIBD6IBG6IBnAECAQ2fAYgBnwGgAQIBEKIBiQGiAZkBAgEO</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="MaximizeWindow_1" sap:VirtualizedContainerService.HintSize="1080,22" />
+      <sap2010:ViewStateData Id="TypeInto_1" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="TypeSecureText_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="ImageFound_2" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="336,696">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_1" sap:VirtualizedContainerService.HintSize="1036,842" />
+      <sap2010:ViewStateData Id="ClickImage_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="LogMessage_1" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="336,361">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ImageFound_1" sap:VirtualizedContainerService.HintSize="653,106" />
+      <sap2010:ViewStateData Id="LogMessage_2" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="LogMessage_3" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="653,238" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="675,508">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="1036,655" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="1058,1661">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="1080,1785">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="1102,1971">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="1116,2070" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="1138,2221">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="System1_login_1" sap:VirtualizedContainerService.HintSize="1178,2301" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
